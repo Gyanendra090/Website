@@ -2282,7 +2282,8 @@ p {
 }
 
 .why-choose-container .text-column h2 {
-  font-size: 2em;
+  font-size: 2rem;
+  font-weight: 700;
 
   margin-bottom: 20px;
 }
@@ -2536,7 +2537,7 @@ p {
 .benefits-header h2 {
   margin-top: 20px;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
 }
 
@@ -2672,12 +2673,13 @@ p {
 .tally-feature-header h2 {
   margin-top: 20px;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
 }
 
 .tally-feature-header h2 span {
   color: #007bff;
+  font-weight: 800;
 }
 
 .tally-feature-grid {
