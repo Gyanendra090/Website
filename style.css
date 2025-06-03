@@ -2174,7 +2174,7 @@ p {
   padding-right: 40px;
 }
 .content h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 20px;
 }
@@ -2463,7 +2463,7 @@ p {
   padding-right: 40px;
 }
 .content h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -2530,13 +2530,10 @@ p {
   font-weight: 600;
   display: inline-block;
 }
-.benefits-header span.tag {
-  margin-bottom: 20px;
-}
 
 .benefits-header h2 {
   margin-top: 20px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #000;
 }
@@ -2546,32 +2543,25 @@ p {
   font-weight: 800;
 }
 
+/* ✅ FIXED: Make a clean 3x2 grid */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin: 40px 100px 0;
 }
 
+/* ✅ NO manual grid-column forcing needed */
 .benefits-card {
   background: #fff;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease-in-out;
   min-height: 200px;
-}
-
-/* Force cards into second row and align under first card */
-/* Remove incorrect span settings */
-.benefits-card:nth-child(5) {
-  grid-column: 1;
-}
-.benefits-card:nth-child(6) {
-  grid-column: 2;
-}
-.benefits-card:nth-child(7) {
-  grid-column: 3;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 400px;
 }
 
 .benefits-card:hover {
@@ -2579,13 +2569,9 @@ p {
   background-color: #007bff;
   color: white;
 }
+
 .benefits-card:hover p {
   color: white;
-}
-
-.benefits-grid.second-row {
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
 }
 
 .benefits-card img {
@@ -2604,6 +2590,7 @@ p {
   color: #555;
   font-size: 0.95rem;
   line-height: 1.5;
+  text-align: left;
 }
 
 .benefits-card p span {
