@@ -57,7 +57,7 @@
 
       .hero {
         position: relative;
-        padding: 120px 20px 100px;
+        padding: 80px 20px 100px;
         text-align: left;
         background: linear-gradient(to bottom, #0a2540, #2d2e81);
         overflow: hidden;
@@ -122,7 +122,7 @@
         animation: fadeInUp 1s ease-out forwards;
         color: #fff;
         top: 0px; /* Adjusts the vertical position */
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
 
       .hero h1 .highlight {
@@ -158,16 +158,18 @@
 
 
       .hero p {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #cfcfcf;
   margin-top: 15px;
   position: relative;
   z-index: 1;
   line-height: 1.6; /* improves readability */
-  max-width: 800px;  /* limits width for better layout */
+  max-width: 850px;  /* limits width for better layout */
   margin-left: 0;
   margin-right: 0;
   text-align: left; /* if used in centered hero sections */
+  font-weight: 700;
+
 }
 
 
@@ -199,6 +201,7 @@
 
       .tech-icons {
         display: flex;
+        
         gap: 40px;
         margin-top: 50px;
         opacity: 0.8;
@@ -227,21 +230,71 @@
         }
       }
 
-      #service-text {
+      /* #service-text {
     display: inline-block;
     transition: opacity 0.5s ease;
     opacity: 1;
     color: #007bff;
-  }
+  } */
 
       .typed-text {
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-size: 1.6rem;
+        font-weight: 700;
         color: #007bff;
         margin-top: 20px;
         position: relative;
         z-index: 1;
       }
+
+      .modern-animated-btn {
+      padding: 12px 25px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 40px;
+    }
+
+    .modern-animated-btn:hover {
+      background: #0056b3;
+    }
+
+    /* Fullscreen Modal */
+    .message-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #007bff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .message-modal.active {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: red;
+      cursor: pointer;
+    }
+
+    .message-content {
+      font-size: 24px;
+      color: white;
+      
+    }
 
       @keyframes fadeInUp {
         from {
@@ -377,15 +430,24 @@
         Welcome to AVX Web  <span class="highlight">Services.</span>
          
       </h1>
-      <p id="rotating-text" data-aos="fade-up" data-aos-delay="100">
-        We provide impressive cloud services — <span id="service-text">Tally on cloud</span>
+      <p>
+        We provide impressive cloud services — <span id="typed-text" class="typed-text" >Tally on cloud</span>
       </p>
 
-      <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1rem;">
+      <p style="max-width: 650px;font-size: 1.1rem;">
         AVX Web Services modernizes your operations with secure remote access and cloud services, keeping you competitive in dynamic markets. Access your business anytime, anywhere.
       </p>
 
-      <div class="typed-text" id="typed-text"></div>
+      <button onclick="openMessage()" class="modern-animated-btn">Let's Talk</button>
+
+  <div class="message-modal" id="messageModal">
+    <div class="close-btn" onclick="closeMessage()">&times;</div>
+    <div class="message-content">
+      Send your message here!
+    </div>
+  </div>
+
+      <!-- <div class="typed-text" id="typed-text"></div> -->
      
 
       <div class="tech-icons" data-aos="fade-up" data-aos-delay="400">
@@ -523,13 +585,192 @@
         we deliver customized solutions for <span>startups</span>,
         <span>SMBs</span>, and <span>enterprises</span>.
       </p>
-      <button class="modern-animated-btn">Let's Talk</button>
+      <!-- <button onclick="window.location.href='message.html'" class="modern-animated-btn">Let's Talk</button> -->
     </div>
   </div>
 </section>
 
+
+<section class="section features-section"> 
+   <span class="pill-btn"><i class="fas fa-bolt"></i> Features</span> 
+   <h2>The Secret Behind Our Cloud Excellence</h2>
+
+  <div class="features-slider-wrapper">
+    <div class="features-cards-container" id="sliderContainer">
+      <div class="features-card active">
+        <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+        <h3>Latest Intel® Xeon® Gold Processors</h3>
+        <p>
+          Exceptional performance for demanding workloads, featuring AI
+          acceleration and higher core counts with industry-leading
+          efficiency.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-memory"></i></div>
+        <h3>High-Speed DDR4 2933 MHz ECC RAM</h3>
+        <p>
+          Efficient data transfer and reduced latency for gaming,
+          workstations, and mission-critical server applications.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-hdd"></i></div>
+        <h3>Blazing-Fast NVMe SSD Storage</h3>
+        <p>
+          Instant load times and superior endurance for gaming, 4K video
+          editing, and enterprise database workloads.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+        <h3>Unmetered Bandwidth</h3>
+        <p>
+          Seamless data flow with no throttling. Ideal for media streaming,
+          cloud services, and global content delivery.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3>24/7 Expert Support</h3>
+        <p>
+          Our certified professionals are available around the clock via
+          Email, Live Chat & Phone with average response times under 15
+          minutes.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+        <h3>Dedicated Technical Account Manager</h3>
+        <p>
+          Personalized support, priority issue resolution, and proactive
+          performance insights tailored to your specific needs.
+        </p>
+      </div>
+
+      <div class="features-card">
+        <div class="feature-icon"><i class="fas fa-database"></i></div>
+        <h3>Tier III / IV Certified Data Centers</h3>
+        <p>
+          Redundant power, cooling, and network systems ensure 99.995%
+          uptime and maximum operational resilience.
+        </p>
+      </div>
+    </div>
+
+    <div class="slider-progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <button class="slider-btn" id="prevBtn" aria-label="Previous feature">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <button class="slider-btn" id="nextBtn" aria-label="Next feature">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+
+<section class="service-hero">
+  <div class="container">
+    <div class="image-part">
+      <img style="width: 500px;" src="character.jpg" alt="Character" />
+    </div>
+    <div class="text-part">
+      <span class="pill-btn"><i class="fas fa-cloud"></i> Services</span>
+      <h1><strong>Smart Dedicated Services</strong></h1>
+      <p>
+        Smart Dedicated Cloud: Instant 2-minute deployment with 100% dedicated CPU power—engineered for high-performance AI, analytics, and CI/CD workflows.
+
+      </p>
+      <a href="#" class="cta-btn">Start Your Business <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+
+<section class="services-grid">
+  <!-- Card 1 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-mouse-pointer"></i></div>
+    <h3>Tally on Cloud</h3>
+    <p>
+      Tally on Cloud enables accessing Tally software remotely via the
+      internet, offering real-time data, scalability, collaboration, and
+      secure business management.
+    </p>
+    
+  </div>
+
+  <!-- Card 2 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-laptop-code"></i></div>
+    <h3>Busy on Cloud</h3>
+    <p>
+      Busy on Cloud provides anytime, anywhere access to Busy software
+      with secure hosting, automated backups, and seamless scalability
+      for businesses.
+    </p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-bullhorn"></i></div>
+    <h3>Marg on Cloud</h3>
+    <p>
+      Marg on Cloud streamlines retail & inventory operations anytime,
+      anywhere—secure, scalable, and always up-to-date!
+    </p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-screwdriver-wrench"></i></div>
+    <h3>Dedicated Server</h3>
+    <p>
+      Dedicated server provides exclusive resources, high performance,
+      enhanced security, and full control for websites, apps, or
+      enterprise workloads.
+    </p>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+    <h3>Linux Server</h3>
+    <p>
+      Linux servers deliver unmatched speed, flexibility, and
+      security—ideal for web hosting, cloud, and DevOps workflows.
+    </p>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-network-wired"></i></div>
+    <h3>Windows Server</h3>
+    <p>
+      Windows Server ensures smooth .NET, SQL, and AD management with
+      robust Microsoft-backed security and scalability.
+    </p>
+  </div>
+</section>
+
+
+
+
+
 <!-- Services Section -->
-<section class="section services-section">
+<!-- <section class="section services-section">
   <div class="section-header">
     <span class="pill-btn"><i class="fas fa-server"></i> Services</span>
     <h2>
@@ -643,97 +884,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="section features-section">
-  <span class="pill-btn"><i class="fas fa-bolt"></i> Features</span>
-  <h2>Our Core Features that <span>Tailored for You</span></h2>
 
-  <div class="features-slider-wrapper">
-    <div class="features-cards-container" id="sliderContainer">
-      <div class="features-card active">
-        <div class="feature-icon"><i class="fas fa-microchip"></i></div>
-        <h3>Latest Intel® Xeon® Gold Processors</h3>
-        <p>
-          Exceptional performance for demanding workloads, featuring AI
-          acceleration and higher core counts with industry-leading
-          efficiency.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-memory"></i></div>
-        <h3>High-Speed DDR4 2933 MHz ECC RAM</h3>
-        <p>
-          Efficient data transfer and reduced latency for gaming,
-          workstations, and mission-critical server applications.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-hdd"></i></div>
-        <h3>Blazing-Fast NVMe SSD Storage</h3>
-        <p>
-          Instant load times and superior endurance for gaming, 4K video
-          editing, and enterprise database workloads.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-infinity"></i></div>
-        <h3>Unmetered Bandwidth</h3>
-        <p>
-          Seamless data flow with no throttling. Ideal for media streaming,
-          cloud services, and global content delivery.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-headset"></i></div>
-        <h3>24/7 Expert Support</h3>
-        <p>
-          Our certified professionals are available around the clock via
-          Email, Live Chat & Phone with average response times under 15
-          minutes.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-        <h3>Dedicated Technical Account Manager</h3>
-        <p>
-          Personalized support, priority issue resolution, and proactive
-          performance insights tailored to your specific needs.
-        </p>
-      </div>
-
-      <div class="features-card">
-        <div class="feature-icon"><i class="fas fa-database"></i></div>
-        <h3>Tier III / IV Certified Data Centers</h3>
-        <p>
-          Redundant power, cooling, and network systems ensure 99.995%
-          uptime and maximum operational resilience.
-        </p>
-      </div>
-    </div>
-
-    <div class="slider-progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-  </div>
-
-  <div class="slider-controls">
-    <button class="slider-btn" id="prevBtn" aria-label="Previous feature">
-      <i class="fas fa-chevron-up"></i>
-    </button>
-    <button class="slider-btn" id="nextBtn" aria-label="Next feature">
-      <i class="fas fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="slider-dots" id="sliderDots"></div>
-</section>
 
 
     
@@ -1341,24 +1495,24 @@ new Typed("#typed-text", {
 });
 
 
-const services = [
-    "Tally on cloud",
-    "Smart Dedicated Service",
-    "Busy on cloud",
-    "Windows Server"
-  ];
+// const services = [
+//     "Tally on cloud",
+//     "Smart Dedicated Service",
+//     "Busy on cloud",
+//     "Windows Server"
+//   ];
 
-  let index = 0;
-  const textEl = document.getElementById("service-text");
+//   let index = 0;
+//   const textEl = document.getElementById("service-text");
 
-  setInterval(() => {
-    textEl.style.opacity = 0;
-    setTimeout(() => {
-      index = (index + 1) % services.length;
-      textEl.innerText = services[index];
-      textEl.style.opacity = 1;
-    }, 500); // wait for fade out before changing text
-  }, 2500); // full cycle eve
+//   setInterval(() => {
+//     textEl.style.opacity = 0;
+//     setTimeout(() => {
+//       index = (index + 1) % services.length;
+//       textEl.innerText = services[index];
+//       textEl.style.opacity = 1;
+//     }, 500); // wait for fade out before changing text
+//   }, 2500); // full cycle eve
 
 const cursorDot = document.getElementById("cursor-dot");
 document.addEventListener("mousemove", (e) => {
@@ -1544,6 +1698,14 @@ new Rellax("[data-rellax-speed]");
         // Initialize
         updateSlider();
       });
+
+      function openMessage() {
+      document.getElementById("messageModal").classList.add("active");
+    }
+
+    function closeMessage() {
+      document.getElementById("messageModal").classList.remove("active");
+    }
 
 
     </script>
