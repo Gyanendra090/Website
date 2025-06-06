@@ -58,7 +58,7 @@
       .hero {
         position: relative;
         padding: 120px 20px 100px;
-        text-align: center;
+        text-align: left;
         background: linear-gradient(to bottom, #0a2540, #2d2e81);
         overflow: hidden;
       }
@@ -114,13 +114,15 @@
       }
 
       .hero h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 800;
         line-height: 1.2;
         position: relative;
         z-index: 1;
         animation: fadeInUp 1s ease-out forwards;
         color: #fff;
+        top: 0px; /* Adjusts the vertical position */
+        margin-bottom: 30px;
       }
 
       .hero h1 .highlight {
@@ -129,29 +131,43 @@
         color: #007bff;
       }
 
+
       .hero h1 .highlight::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 10px;
-        background-color: #007bff;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-        transform: rotate(-2deg);
-      }
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 12px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 100 12" preserveAspectRatio="none"><path d="M0,12 C25,0 75,0 100,12" fill="%23007bff" /></svg>') no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+/* .section-header h2 .highlight {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 12px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 100 12" preserveAspectRatio="none"><path d="M0,12 C25,0 75,0 100,12" fill="%23007bff" /></svg>') no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+} */
+
 
       .hero p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #cfcfcf;
   margin-top: 15px;
   position: relative;
   z-index: 1;
   line-height: 1.6; /* improves readability */
-  max-width: 750px;  /* limits width for better layout */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; /* if used in centered hero sections */
+  max-width: 800px;  /* limits width for better layout */
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left; /* if used in centered hero sections */
 }
 
 
@@ -183,7 +199,6 @@
 
       .tech-icons {
         display: flex;
-        justify-content: center;
         gap: 40px;
         margin-top: 50px;
         opacity: 0.8;
@@ -211,6 +226,13 @@
           transform: translateY(-10px);
         }
       }
+
+      #service-text {
+    display: inline-block;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    color: #007bff;
+  }
 
       .typed-text {
         font-size: 1.5rem;
@@ -337,27 +359,32 @@
         ></path>
       </svg>
 
-      <img
+      <!-- <img
         src="images/home/cloud.jpg"
         alt="Chat Bubble"
         class="floating chat-bubble"
         data-aos="fade-down"
         data-rellax-speed="-1"
-      />
-      <img
+      /> -->
+      <!-- <img
         src="/images/home/busy.avif"
         alt="Developer Character"
         class="floating dev-character"
         data-aos="fade-left"
         data-rellax-speed="2"
-      />
+      /> -->
       <h1 data-aos="fade-up" data-rellax-speed="-2">
-        Welcome to  <span class="highlight">AVX Web</span><br />
-         Services.
+        Welcome to AVX Web  <span class="highlight">Services.</span>
+         
       </h1>
-      <p data-aos="fade-up" data-aos-delay="100">
+      <p id="rotating-text" data-aos="fade-up" data-aos-delay="100">
+        We provide impressive cloud services — <span id="service-text">Tally on cloud</span>
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1rem;">
         AVX Web Services modernizes your operations with secure remote access and cloud services, keeping you competitive in dynamic markets. Access your business anytime, anywhere.
       </p>
+
       <div class="typed-text" id="typed-text"></div>
      
 
@@ -476,7 +503,7 @@
   <div class="intro-container">
     <div class="intro-image" data-aos="zoom-in">
       <img
-        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        src="images/home/Cloud-Server.jpg"
         alt="Cloud Server Infrastructure"
         loading="lazy"
       />
@@ -496,10 +523,7 @@
         we deliver customized solutions for <span>startups</span>,
         <span>SMBs</span>, and <span>enterprises</span>.
       </p>
-      <p>
-        Let's collaborate to drive innovation and achieve sustainable
-        success in the digital landscape.
-      </p>
+      <button class="modern-animated-btn">Let's Talk</button>
     </div>
   </div>
 </section>
@@ -622,9 +646,9 @@
 </section>
 
 
-<section class="features-section">
-  <div class="section-title">Why Choose Us</div>
-  <h2>Premium Features <span>Tailored for You</span></h2>
+<section class="section features-section">
+  <span class="pill-btn"><i class="fas fa-bolt"></i> Features</span>
+  <h2>Our Core Features that <span>Tailored for You</span></h2>
 
   <div class="features-slider-wrapper">
     <div class="features-cards-container" id="sliderContainer">
@@ -1316,6 +1340,26 @@ new Typed("#typed-text", {
   loop: true,
 });
 
+
+const services = [
+    "Tally on cloud",
+    "Smart Dedicated Service",
+    "Busy on cloud",
+    "Windows Server"
+  ];
+
+  let index = 0;
+  const textEl = document.getElementById("service-text");
+
+  setInterval(() => {
+    textEl.style.opacity = 0;
+    setTimeout(() => {
+      index = (index + 1) % services.length;
+      textEl.innerText = services[index];
+      textEl.style.opacity = 1;
+    }, 500); // wait for fade out before changing text
+  }, 2500); // full cycle eve
+
 const cursorDot = document.getElementById("cursor-dot");
 document.addEventListener("mousemove", (e) => {
   cursorDot.style.top = e.clientY + "px";
@@ -1333,28 +1377,28 @@ new Rellax("[data-rellax-speed]");
 
 
  // Initialize AOS animations
- AOS.init({
-        once: true,
-        duration: 800,
-        easing: "ease-out-quart",
-      });
+//  AOS.init({
+//         once: true,
+//         duration: 800,
+//         easing: "ease-out-quart",
+//       });
 
       // Typed.js initialization
-      new Typed("#typed-text", {
-        strings: [
-          "Smart, Scalable Web Solutions",
-          "Cloud Hosting for Tally, Marg, and Busy",
-          "High-Performance Dedicated Servers",
-          "Enterprise-Grade Web Services",
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 1500,
-        loop: true,
-        showCursor: true,
-        cursorChar: "|",
-        smartBackspace: true,
-      });
+      // new Typed("#typed-text", {
+      //   strings: [
+      //     "Smart, Scalable Web Solutions",
+      //     "Cloud Hosting for Tally, Marg, and Busy",
+      //     "High-Performance Dedicated Servers",
+      //     "Enterprise-Grade Web Services",
+      //   ],
+      //   typeSpeed: 50,
+      //   backSpeed: 30,
+      //   backDelay: 1500,
+      //   loop: true,
+      //   showCursor: true,
+      //   cursorChar: "|",
+      //   smartBackspace: true,
+      // });
 
       // Intersection Observer for animations
       document.addEventListener("DOMContentLoaded", function () {

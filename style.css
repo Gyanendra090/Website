@@ -257,7 +257,7 @@ nav {
   --primary: #4361ee;
   --primary-light: #e6f0ff;
   --secondary: #3a0ca3;
-  --accent: #f72585;
+  --accent: orange;
   --dark: #1a1a2e;
   --light: #f8f9fa;
   --text: #4a4a68;
@@ -266,7 +266,7 @@ nav {
   --card-shadow: 0 8px 30px rgba(67, 97, 238, 0.15);
   --hover-shadow: 0 12px 40px rgba(67, 97, 238, 0.25);
   --border-radius: 16px;
-  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
 * {
@@ -288,7 +288,7 @@ body {
 
 /* Shared Section Styles */
 .section {
-  padding: 100px 20px;
+  padding: 50px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -354,12 +354,12 @@ body {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 auto;
   max-width: 800px;
   line-height: 1.3;
-  background: var(--gradient);
+  background: #007bff;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -370,7 +370,7 @@ body {
   position: relative;
 }
 
-.section-header h2 span::after {
+/* .section-header h2 span::after {
   content: "";
   position: absolute;
   bottom: 5px;
@@ -380,11 +380,11 @@ body {
   background-color: rgba(247, 37, 133, 0.2);
   z-index: -1;
   border-radius: 4px;
-}
+} */
 
 /* Intro Section Specific */
 .intro-section {
-  background-color: #f9fbfe;
+  background-color: white;
 }
 
 .intro-container {
@@ -397,6 +397,7 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  top: -20px;
 }
 
 .intro-image {
@@ -464,6 +465,63 @@ body {
 .intro-content span:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.modern-animated-btn {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, var(--primary));
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  animation: pulse-glow 2s infinite;
+}
+
+.modern-animated-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.modern-animated-btn:hover::before {
+  left: 100%;
+}
+
+.modern-animated-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px rgba(0, 123, 255, 0.6),
+    0 0 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+  }
 }
 
 /* Services Section Specific */
@@ -1461,7 +1519,7 @@ p {
   --text-light: #64748b;
   --white: #ffffff;
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
 * {
