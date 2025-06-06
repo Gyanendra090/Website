@@ -306,6 +306,137 @@
           transform: translateY(0);
         }
       }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        padding: 20px 0;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .feature-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        overflow: hidden; /* Optional: hides overflow in case of minor misfit */
+      }
+
+      .feature-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        display: block;
+      }
+
+      .service-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .service-description {
+        color: #7f8c8d;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .service-card {
+          padding: 30px 20px;
+        }
+
+        .service-icon {
+          width: 100px;
+          height: 100px;
+        }
+
+        .service-title {
+          font-size: 20px;
+        }
+      }
+
+      .floating-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .floating-shape {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .floating-shape:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .floating-shape:nth-child(2) {
+        top: 20%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+
+      .floating-shape:nth-child(3) {
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
   </style>
   </head>
   <body>
@@ -591,7 +722,7 @@
 </section>
 
 
-<section class="section features-section"> 
+<!-- <section class="section features-section"> 
    <span class="pill-btn"><i class="fas fa-bolt"></i> Features</span> 
    <h2>The Secret Behind Our Cloud Excellence</h2>
 
@@ -678,7 +809,128 @@
   </div>
 
   <div class="slider-dots" id="sliderDots"></div>
-</section>
+</section> -->
+
+
+<div class="floating-elements">
+  <div
+    class="floating-shape"
+    style="
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+    "
+  ></div>
+  <div
+    class="floating-shape"
+    style="
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      border-radius: 20px;
+    "
+  ></div>
+  <div
+    class="floating-shape"
+    style="
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      border-radius: 50%;
+    "
+  ></div>
+</div>
+
+<div class="container">
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.48_98d7703e.jpg"
+          alt=""
+        />
+      </div>
+      <h3>Latest Intel® Xeon® Gold Processors</h3>
+      <p class="feature-description">
+        Exceptional performance for demanding workloads, featuring AI
+        acceleration and higher core counts with industry-leading
+        efficiency.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.48_d00ef4b9.jpg"
+          alt=""
+        />
+      </div>
+      <h3 class="feature-title">High-Speed DDR4 2933 MHz ECC RAM</h3>
+      <p class="feature-description">
+        Efficient data transfer and reduced latency for gaming,
+        workstations, and mission-critical server applications.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.48_fdd8fa7e.jpg"
+          alt=""
+        />
+      </div>
+      <h3 class="feature-title">Blazing-Fast NVMe SSD Storage</h3>
+      <p class="feature-description">
+        Instant load times and superior endurance for gaming, 4K video
+        editing, and enterprise database workloads.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.49_3c3d4152.jpg"
+          alt=""
+        />
+      </div>
+      <h3 class="feature-title">24/7 Expert Support</h3>
+      <p class="feature-description">
+        Our certified professionals are available around the clock via
+        Email, Live Chat & Phone with average response times under 15
+        minutes.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.49_fedda357.jpg"
+          alt=""
+        />
+      </div>
+      <h3 class="feature-title">Dedicated Technical Account Manager</h3>
+      <p class="feature-description">
+        Personalized support, priority issue resolution, and proactive
+        performance insights tailored to your specific needs.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-image">
+        <img
+          src="images/home/features/WhatsApp Image 2025-06-06 at 18.22.50_be7a6b49.jpg"
+          alt=""
+        />
+      </div>
+      <h3 class="feature-title">Tier III / IV Certified Data Centers</h3>
+      <p class="feature-description">
+        Redundant power, cooling, and network systems ensure 99.995% uptime
+        and maximum operational resilience.
+      </p>
+    </div>
+  </div>
+</div>
 
 
 <section class="service-hero">
